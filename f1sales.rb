@@ -17,13 +17,17 @@ begin
   csv.each_with_index do |row, i|
     Net::HTTP.post_form(uri, row)
     puts "Still #{csv.length-i} rows to go."
-    # puts Net::HTTP.post_form(uri, row).body
+    puts Net::HTTP.post_form(uri, row).body
   end
   puts 'End :)'
   puts
 
+rescue Interrupt
+  puts "\n\nThe process has been INTERRUPTED.\n\n"
+rescue SocketError
+  puts "There was a problem, check your internet connection.\n\n"
 rescue
-  puts "There was a problem, check your internet connection."
+  puts 'Sorry, we had a problem :('
 else
-  puts "Everything is ready."
+  puts 'Everything is ready.'
 end
