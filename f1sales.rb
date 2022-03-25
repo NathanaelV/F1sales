@@ -16,14 +16,14 @@ begin
 
   csv.each_with_index do |row, i|
     Net::HTTP.post_form(uri, row)
-    puts "Faltam #{csv.length-i} linhas"
+    puts "Still #{csv.length-i} rows to go."
     # puts Net::HTTP.post_form(uri, row).body
   end
-  puts 'Fim :)'
+  puts 'End :)'
   puts
 
 rescue
-  puts "Houve um problema, verifique sua conexão com a internet"
+  puts "There was a problem, check your internet connection."
 else
-  puts "Tudo Pronto"
+  puts "Everything is ready."
 end
