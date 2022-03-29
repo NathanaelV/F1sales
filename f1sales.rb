@@ -15,9 +15,9 @@ begin
   uri = URI('https://httpbin.org/post')
 
   csv.each_with_index do |row, i|
-    Net::HTTP.post_form(uri, row)
+    response = Net::HTTP.post_form(uri, row)
     puts "Still #{csv.length-i} rows to go."
-    puts Net::HTTP.post_form(uri, row).body
+    puts response.body
   end
   puts 'End :)'
   puts
