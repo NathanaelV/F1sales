@@ -31,5 +31,3 @@ rescue
 else
   puts 'Everything is ready.'
 end
-
-# Testando o comando Pull
