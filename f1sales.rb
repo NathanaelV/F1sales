@@ -1,4 +1,5 @@
 # site do desafio https://valley-honeycrisp-a14.notion.site/Task-59bc83b5ddd24c0a84f2465c40cc5c02
+# Por que excluiu o comentario de baixo?
 
 require 'net/http'
 require 'csv'
